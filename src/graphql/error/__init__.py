@@ -10,6 +10,11 @@ from .syntax_error import GraphQLSyntaxError
 
 from .located_error import located_error
 
+
+def format_error(error: GraphQLError) -> GraphQLFormattedError:
+    return GraphQLFormattedError(error).formatted
+
+
 __all__ = [
     "GraphQLError",
     "GraphQLErrorExtensions",
